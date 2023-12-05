@@ -1,0 +1,22 @@
+.documents {
+    display: flex;
+    border: solid 2px rgb(255, 255, 255);
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(255, 228, 217);
+    border: 1px solid rgb(5, 117, 148);
+    padding: 1px 10px;
+    box-shadow: 1px 4px rgb(255, 117, 148);
+    color: black;
+}
+
+nav.categories {
+    min-width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
