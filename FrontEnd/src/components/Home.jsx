@@ -28,15 +28,9 @@ function Home() {
       <nav className="categories">
         <div className="documents">
           <Link to={""}>Home</Link>
-          <a href="http://localhost:8000/swagger" target="_blank">
-            Swagger
-          </a>
-          <a href="http://localhost:8000/documents" target="_blank">
-            Documents
-          </a>
-          <a href="http://localhost:8000/api/v1" target="_blank">
-            D-Rest-F
-          </a>
+          <a href="http://localhost:8000/swagger" target="_blank"> Swagger </a>
+          <a href="http://localhost:8000/documents" target="_blank"> Documents </a>
+          <a href="http://localhost:8000/api/v1" target="_blank"> D-Rest-F </a>
         </div>
         {categories.map((cat) => {
           return (
