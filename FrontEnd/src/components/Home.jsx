@@ -13,7 +13,7 @@ function Home() {
   React.useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:8000/api/v1/categories/",
+      url: `${hostUrl}api/v1/categories/`,
     })
       .then((response) => {
         setCategories(response.data);
