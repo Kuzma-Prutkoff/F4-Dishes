@@ -9,7 +9,7 @@ import Categories from "./Categories.jsx";
 
 function Home() {
   const [categories, setCategories] = React.useState([]);
-
+  const hostUrl = 'http://localhost:8000/';
   React.useEffect(() => {
     axios({
       method: "get",
@@ -28,9 +28,9 @@ function Home() {
       <nav className="categories">
         <div className="documents">
           <Link to={""}>Home</Link>
-          <a href="http://localhost:8000/swagger" target="_blank"> Swagger </a>
-          <a href="http://localhost:8000/documents" target="_blank"> Documents </a>
-          <a href="http://localhost:8000/api/v1" target="_blank"> D-Rest-F </a>
+          <a href={hostUrl + 'swagger'} target="_blank" rel="noopener noreferrer"> Swagger </a>
+          <a href={hostUrl + 'documents'} target="_blank" rel="noopener noreferrer"> Documents </a>
+          <a href={hostUrl + 'api/v1'} target="_blank" rel="noopener noreferrer"> D-Rest-F </a>
         </div>
         {categories.map((cat) => {
           return (

@@ -9,11 +9,12 @@ function Categories() {
   const params = useParams();
   const [allDishes, setAllDishes] = React.useState([]);
   const [currentCategory, setCurrentCategory] = React.useState();
+  const drfUrl = 'http://localhost:8000/api/v1/';
 
   React.useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:8000/api/v1/dishes/",
+      url: `${drfUrl}dishes/`,
     })
       .then((response) => {
         setAllDishes(response.data);
@@ -26,7 +27,7 @@ function Categories() {
   React.useEffect(() => {
     axios({
       method: "get",
-      url: `http://localhost:8000/api/v1/categories/${params.id}`,
+      url: `${drfUrl}categories/${params.id}`,
     })
       .then((response) => {
         setCurrentCategory(response.data.name);
