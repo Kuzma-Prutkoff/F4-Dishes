@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "../styles/Home.css";
 import axios from "axios";
@@ -8,9 +8,9 @@ import Categories from "./Categories.jsx";
 
 
 function Home() {
-  const [categories, setCategories] = React.useState([]);
+  const [categories, setCategories] = useState([]);
   const hostUrl = 'http://localhost:8000/';
-  React.useEffect(() => {
+  useEffect(() => {
     axios({
       method: "get",
       url: `${hostUrl}api/v1/categories/`,

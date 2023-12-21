@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Categories.css";
 import { Routes, Route, useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -7,11 +7,11 @@ import Dishes from "./Dishes.jsx";
 
 function Categories() {
   const params = useParams();
-  const [allDishes, setAllDishes] = React.useState([]);
-  const [currentCategory, setCurrentCategory] = React.useState();
+  const [allDishes, setAllDishes] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState();
   const drfUrl = 'http://localhost:8000/api/v1/';
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios({
       method: "get",
       url: `${drfUrl}dishes/`,
@@ -24,7 +24,7 @@ function Categories() {
       });
   }, [params]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios({
       method: "get",
       url: `${drfUrl}categories/${params.id}`,

@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/Dishes.css";
 
 function Dishes() {
   const params = useParams();
-  const [dish, setDish] = React.useState({});
-  React.useEffect(() => {
+  const [dish, setDish] = useState({});
+  useEffect(() => {
     axios({
       method: "get",
       url: `http://localhost:8000/api/v1/dishes/${params.id}`,
